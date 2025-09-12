@@ -15,7 +15,7 @@
       4.Salir"
       );
       Console.WriteLine("Seleccione una opcion");
-      opcion = Console.ReadLine();
+      opcion = Console.ReadLine() ?? "";
 
       switch (opcion)
       {

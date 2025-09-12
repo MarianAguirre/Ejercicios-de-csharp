@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos/Ejercicios propuestos.csproj": {}
+  },
+  "projects": {
+    "/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos/Ejercicios propuestos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos/Ejercicios propuestos.csproj",
+        "projectName": "Ejercicios propuestos",
+        "projectPath": "/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos/Ejercicios propuestos.csproj",
+        "packagesPath": "/home/swam/.nuget/packages/",
+        "outputPath": "/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos y resueltos básicos en C#/Ejercicios propuestos/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/swam/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
