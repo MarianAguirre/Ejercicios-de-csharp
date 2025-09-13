@@ -35,6 +35,8 @@
     if (numero1 >= numero2)
     {
       Console.WriteLine($"{numero1} es mayor que {numero2}");
+    } else if (numero1 == numero2) {
+      Console.WriteLine("Los dos numeros son iguales");
     }
     else
     {
@@ -131,30 +133,67 @@
 
   public static void Main(string[] args)
   {
+    string opcion;
+    
     Console.WriteLine("EJERCICIOS PRACTICOS");
     Ejercicios resolucion = new Ejercicios();
-    Console.WriteLine(@"1) Crear 3 variables numéricas con el valor que tu quieras y en otra variable numérica guardar el valor de la suma de las 3 anteriores. Mostrar por consola.");
-    resolucion.Ejercicio1();
-    Console.WriteLine("=======================================");
-    Console.WriteLine("=======================================");
-    Console.WriteLine(@"2) Pedir por consola un nombre de persona y el nombre de una ciudad (no hace falta que sean reales o comprobarlos) y mostrar por pantalla, el siguiente mensaje «Hola » <nombre> » bienvenido a » <ciudad>");
-    Console.WriteLine(@"3) Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas » <nombre> » y tienes » <años> » años»");
-    resolucion.Ejercicio3();
-    Console.WriteLine("=======================================");
-    Console.WriteLine("=======================================");
-    Console.WriteLine(@"4) Pedir dos números al usuario por teclado y decir que número es el mayor.");
-    resolucion.Ejercicio4();
-    Console.WriteLine(@"5) Pedir el nombre de la semana al usuario y decirle si es fin de semana o no.  En caso de error, indicarlo.");
-    resolucion.Ejercicio5();
-    Console.WriteLine(@"6) Pedir al usuario el precio de un producto (valor positivo) y la forma de pagar (efectivo o tarjeta) si la forma de pago es mediante tarjeta, pedir el numero de cuenta (inventado)");
-    resolucion.Ejercicio6();
-    Console.WriteLine(@"7) Recorre los números del 1 al 100. Usa un bucle for.");
-    resolucion.Ejercicio7();
-    Console.WriteLine(@"8) Recorre los números del 1 al 100. Usa un bucle while.");
-    resolucion.Ejercicio8();
-    Console.WriteLine(@"9) Recorre los números del 1 al 100. Muestra los números pares. Usar el tipo de bucle que quieras.");
-    resolucion.Ejercicio9();
-    Console.WriteLine(@"10) Recorre los números del 1 al 100. Muestra los números pares o divisibles entre 3.");
-    resolucion.Ejercicio10();
+    do
+    {
+      Console.WriteLine("=================================");
+      Console.WriteLine("Elige un numero para ver el ejercicio... ");
+      for (int e = 1; e <= 10; e++)
+      {
+        Console.WriteLine(e);
+      }
+      opcion = Console.ReadLine() ?? "";
+      switch (opcion)
+      {
+        case "1":
+          Console.WriteLine(@"1) Crear 3 variables numéricas con el valor que tu quieras y en otra variable numérica guardar el valor de la suma de las 3 anteriores. Mostrar por consola.");
+          resolucion.Ejercicio1();
+          break;
+        case "2":
+          Console.WriteLine(@"2) Pedir por consola un nombre de persona y el nombre de una ciudad (no hace falta que sean reales o comprobarlos) y mostrar por pantalla, el siguiente mensaje «Hola » <nombre> » bienvenido a » <ciudad>");
+          resolucion.Ejercicio2();
+          break;
+        case "3":
+          Console.WriteLine(@"3) Pedir por consola tu nombre y tu edad y mostrar el siguiente mensaje: «Te llamas » <nombre> » y tienes » <años> » años»");
+          resolucion.Ejercicio3();
+          break;
+        case "4":
+          Console.WriteLine(@"4) Pedir dos números al usuario por teclado y decir que número es el mayor.");
+          resolucion.Ejercicio4();
+          break;
+        case "5":
+          Console.WriteLine(@"5) Pedir el nombre de la semana al usuario y decirle si es fin de semana o no.  En caso de error, indicarlo.");
+          resolucion.Ejercicio5();
+          break;
+        case "6":
+          Console.WriteLine(@"6) Pedir al usuario el precio de un producto (valor positivo) y la forma de pagar (efectivo o tarjeta) si la forma de pago es mediante tarjeta, pedir el numero de cuenta (inventado)");
+          resolucion.Ejercicio6();
+          break;
+        case "7":
+          Console.WriteLine(@"7) Recorre los números del 1 al 100. Usa un bucle for.");
+          resolucion.Ejercicio7();
+          break;
+        case "8":
+          Console.WriteLine(@"8) Recorre los números del 1 al 100. Usa un bucle while.");
+          resolucion.Ejercicio8();
+          break;
+        case "9":
+          Console.WriteLine(@"9) Recorre los números del 1 al 100. Muestra los números pares. Usar el tipo de bucle que quieras.");
+          resolucion.Ejercicio9();
+          break;
+        case "10":
+          Console.WriteLine(@"10) Recorre los números del 1 al 100. Muestra los números pares o divisibles entre 3.");
+          resolucion.Ejercicio10();
+          break;
+        default:
+        Console.WriteLine("OPCION NO VALIDA. PRESIONES ENTER PARA CONTINUAR...");
+          Console.ReadKey();
+          break;
+      }
+      
+    } while (opcion != "10");
   }
 }
