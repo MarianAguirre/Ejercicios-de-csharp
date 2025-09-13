@@ -42,6 +42,93 @@
     }
   }
 
+  void Ejercicio5()
+  {
+    string[] dias = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES" };
+    Console.WriteLine("Escribe el nombre del día...");
+    string dia = Console.ReadLine() ?? "";
+    if ((dia.ToUpper() == "SABADO") || ( dia.ToUpper() == "DOMINGO"))
+    {
+      Console.WriteLine($"{dia.ToUpper()} es un dia de fin de semana");
+    } else if (dias.Contains(dia.ToUpper()))
+    {
+      Console.WriteLine($"{dia.ToUpper()} es un dia de entre semana");
+    }
+    else
+    {
+      Console.WriteLine("No es un dia valido");
+    }
+    
+  }
+
+  void Ejercicio6()
+  {
+    Console.WriteLine("Escribe el precio del producto....");
+    double precio = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine(@"Elige la forma de pago:
+1) Efectivo
+2) Tarjeta
+");
+    int formaPago = Convert.ToInt32(Console.ReadLine());
+
+    if (precio < 0)
+    {
+      Console.WriteLine("No es un precio valido");
+      Ejercicio6();
+    }
+    else if (formaPago == 2)
+    {
+      Console.WriteLine("Ingrese el numero de cuenta....");
+      string cuenta = Console.ReadLine() ?? "";
+      Console.WriteLine($"El producto con precio {precio} a sido pagado con la tarjeta {cuenta}");
+    }
+    else if (formaPago == 1)
+    {
+      Console.WriteLine($"El producto con precio {precio} a sido pagado");
+    }
+    else
+    {
+      Console.WriteLine("La forma de pago no es correcta");
+    }
+  }
+
+  void Ejercicio7()
+  {
+    for (int i = 1; i <= 100; i++)
+    {
+      Console.WriteLine(i);
+    }
+  }
+
+  void Ejercicio8()
+  {
+    int numero = 1;
+    while (numero <= 100)
+    {
+      Console.WriteLine(numero);
+      numero++;
+    }
+  }
+
+  void Ejercicio9()
+  {
+    for (int a = 0; a <= 100; a+=2)
+    {
+      Console.WriteLine(a);
+    }
+  }
+
+  void Ejercicio10()
+  {
+    for (int b = 0; b <= 100; b++)
+    {
+      if ((b%2==0) || (b%3==0))
+      {
+        Console.WriteLine(b);
+      }
+    }
+  }
+
   public static void Main(string[] args)
   {
     Console.WriteLine("EJERCICIOS PRACTICOS");
@@ -57,6 +144,17 @@
     Console.WriteLine("=======================================");
     Console.WriteLine(@"4) Pedir dos números al usuario por teclado y decir que número es el mayor.");
     resolucion.Ejercicio4();
-    
+    Console.WriteLine(@"5) Pedir el nombre de la semana al usuario y decirle si es fin de semana o no.  En caso de error, indicarlo.");
+    resolucion.Ejercicio5();
+    Console.WriteLine(@"6) Pedir al usuario el precio de un producto (valor positivo) y la forma de pagar (efectivo o tarjeta) si la forma de pago es mediante tarjeta, pedir el numero de cuenta (inventado)");
+    resolucion.Ejercicio6();
+    Console.WriteLine(@"7) Recorre los números del 1 al 100. Usa un bucle for.");
+    resolucion.Ejercicio7();
+    Console.WriteLine(@"8) Recorre los números del 1 al 100. Usa un bucle while.");
+    resolucion.Ejercicio8();
+    Console.WriteLine(@"9) Recorre los números del 1 al 100. Muestra los números pares. Usar el tipo de bucle que quieras.");
+    resolucion.Ejercicio9();
+    Console.WriteLine(@"10) Recorre los números del 1 al 100. Muestra los números pares o divisibles entre 3.");
+    resolucion.Ejercicio10();
   }
 }

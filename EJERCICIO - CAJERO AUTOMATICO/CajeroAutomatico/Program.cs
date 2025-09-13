@@ -85,7 +85,7 @@
 
     void Salir()
     {
-      Console.WriteLine(@"      =====================
+      Console.WriteLine(@"      ===================================
       GRACIAS POR USAR NUESTROS SERVICIOS
       ===================================
       ");
