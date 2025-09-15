@@ -7,5 +7,8 @@ Ejercicio practico basico de la funcion de un cajero automatico, ejercicio cread
 ## Ejercicios propuestos básicos de C#
 10 Ejercicios básicos para practicar C#, ejercicios originarios de [Ejercicios propuestos y resueltos básicos en C#](https://discoduroderoer.es/ejercicios-propuestos-y-resueltos-basicos-en-c-sharp/)
 
-## Ejercicios de Arrays [EN PROGRESO]
+## Ejercicios de Arrays
 7 Ejercicios de arrays, originarios de [Ejercicios de arrays propuestos y resueltos de C#](https://discoduroderoer.es/ejercicios-de-arrays-propuestos-y-resueltos-de-c-sharp/)
+
+## Ejercicios de funciones y metodos [EN PROGRESO]
+18 Ejercicios de funciones y métodos  de [Ejercicios propuestos y resueltos funciones y métodos C#](https://discoduroderoer.es/ejercicios-propuestos-y-resueltos-funciones-y-metodos-c-sharp/)

@@ -1,0 +1,15 @@
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/bin/Debug/net9.0/Ejercicios de funciones y metodos
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/bin/Debug/net9.0/Ejercicios de funciones y metodos.deps.json
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/bin/Debug/net9.0/Ejercicios de funciones y metodos.runtimeconfig.json
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/bin/Debug/net9.0/Ejercicios de funciones y metodos.dll
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/bin/Debug/net9.0/Ejercicios de funciones y metodos.pdb
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.GeneratedMSBuildEditorConfig.editorconfig
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.AssemblyInfoInputs.cache
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.AssemblyInfo.cs
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.csproj.CoreCompileInputs.cache
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.sourcelink.json
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.dll
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/refint/Ejercicios de funciones y metodos.dll
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.pdb
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/Ejercicios de funciones y metodos.genruntimeconfig.cache
+/home/swam/Documentos/Ejercicios-de-csharp/Ejercicios de funciones y metodos/obj/Debug/net9.0/ref/Ejercicios de funciones y metodos.dll

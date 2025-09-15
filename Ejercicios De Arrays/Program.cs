@@ -93,7 +93,7 @@
       Console.WriteLine("Elige un numero para ver el ejercicio...");
       for (int ea = 1; ea <= 7; ea++)
       {
-        Console.WriteLine(ea);
+        Console.Write($"{ea}) ");
       }
       opcion = Console.ReadLine() ?? "";
 
