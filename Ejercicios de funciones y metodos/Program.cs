@@ -144,6 +144,126 @@ class Funciones
     return decimalN;
   }
 
+  void Funcion11()
+  {
+    Console.WriteLine(@"Ingrese el numero de acuerdo a lo que necesite 
+1) Decimal a octal
+2) Octal a decimal");
+    int seleccion = Convert.ToInt32(Console.ReadLine());
+    if (seleccion == 1)
+    {
+      Console.WriteLine("Por favor ingrese un numero");
+      int numeroDecimal = Convert.ToInt32(Console.ReadLine());
+      double octalSolucion = Funcion11DO(numeroDecimal);
+      Console.WriteLine($"El numero {numeroDecimal} en octal es {octalSolucion}");
+    }
+    else if (seleccion == 2)
+    {
+      Console.WriteLine("Por favor ingrese un octal");
+      int numeroOctal = Convert.ToInt32(Console.ReadLine());
+      double decimalSolucion = Funcion11OD(numeroOctal);
+      Console.WriteLine($"El octal {numeroOctal} en decimal es {decimalSolucion}");
+    }
+    else
+    {
+      Console.WriteLine("Opcion invalidad");
+      Funcion11();
+    }
+  }
+
+  double Funcion11DO(int numeroDecimal)
+  {
+    double octal=0;
+    for (int i = numeroDecimal, j = 0; i > 0; i /= 8, j++)
+    {
+      numeroDecimal = i % 8;
+      octal += numeroDecimal * Math.Pow(10, j);
+    }
+    return octal; 
+  }
+
+  double Funcion11OD(int numeroOctal)
+  {
+    double decimalN = 0;
+    for (int i = numeroOctal, j = 0; i > 0; i /= 10, j++)
+    {
+      numeroOctal = i % 10;
+      if (!(numeroOctal >= 0 && numeroOctal <= 7))
+      {
+        return -1;
+      }
+      decimalN += numeroOctal * Math.Pow(8, j);
+    }
+    return decimalN;
+  }
+
+  void Funcion12()
+  {
+    Console.WriteLine(@"Ingrese el numero de acuerdo a lo que necesite 
+1) Decimal a Hexa
+2) Hexa a decimal");
+    int seleccion = Convert.ToInt32(Console.ReadLine());
+    if (seleccion == 1)
+    {
+      Console.WriteLine("Por favor ingrese un numero");
+      int numeroDecimal = Convert.ToInt32(Console.ReadLine());
+      string HexaSolucion = Funcion12DH(numeroDecimal);
+      Console.WriteLine($"El numero {numeroDecimal} en hexadecimal es {HexaSolucion}");
+    }
+    else if (seleccion == 2)
+    {
+      Console.WriteLine("Por favor ingrese un hexadecimal");
+      string numeroHexa = Console.ReadLine() ?? "";
+      int decimalSolucion = Funcion12HD(numeroHexa);
+      Console.WriteLine($"El hexadecimal {numeroHexa} en decimal es {decimalSolucion}");
+    }
+    else
+    {
+      Console.WriteLine("Opcion invalidad");
+      Funcion12();
+    }
+  }
+
+  string Funcion12DH(int numeroDecimal)
+  {
+    char[] letras = { 'A', 'B', 'C', 'D', 'E', 'F' };
+    string Hexa = "";
+    long resto=0;
+    for (int i = numeroDecimal, j = 0; i > 0; i /= 16, j++)
+    {
+     resto = i % 16;
+                if (resto >= 10)
+                {
+                    Hexa = letras[resto - 10] + Hexa;
+ 
+                }
+                else
+                {
+                    Hexa = resto + Hexa;
+                }
+    }
+    return Hexa; 
+  }
+
+  int Funcion12HD(string numeroHexa)
+  {
+    int decimalN = 0;
+    for (int i = 0, j = numeroHexa.Length - 1; i < numeroHexa.Length; i++, j--)
+    {
+      if (numeroHexa[i] >= '0' && numeroHexa[i] <= '9')
+                {
+                    decimalN += (int)Math.Pow(16, j) * Convert.ToInt32(numeroHexa[i] + "");
+                } else if (numeroHexa[i] >= 'A' && numeroHexa[i] <= 'F') {
+                    decimalN += (int)Math.Pow(16, j) * Convert.ToInt32((numeroHexa[i] - 'A' + 10) + "");
+                }
+                else
+                {
+                    return -1;
+                }
+    }
+    return decimalN;
+  }
+
 
   static void Main(string[] args)
   {
@@ -243,6 +363,14 @@ class Funciones
         case "10":
           Console.WriteLine("10. Dado un numero decimal, pásalo a binario. Haz otra función que dado un binario, nos devuelva su numero decimal.");
           resolucion.Funcion10();
+          break;
+        case "11":
+          Console.WriteLine("11. Dado un numero decimal, pásalo a octal y viceversa.");
+          resolucion.Funcion11();
+          break;
+        case "12":
+          Console.WriteLine("12. Dado un numero decimal, pásalo a hexadecimal y viceversa.");
+          resolucion.Funcion12();
           break;
         default:
           Console.WriteLine("OPCION INVALIDA");
