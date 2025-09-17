@@ -1,4 +1,6 @@
-﻿class Funciones
+﻿using Microsoft.VisualBasic;
+
+class Funciones
 {
 
   void Funcion1(string nombre)
@@ -53,20 +55,95 @@
     return media;
   }
 
-  int[,] Funcion7(int valor)
+  int[,] Funcion7(int valor, int size)
   {
-    int[,] matriz = new int[valor, valor];
+    int[,] matriz = new int[size, size];
 
     for (int i = 0; i < matriz.GetLength(0); i++)
     {
       for (int j = 0; j < matriz.GetLength(1); j++)
       {
-        Console.Write(matriz[i, j] + " ");
+        matriz[i, j] = valor;
       }
       Console.WriteLine();
     }
     return matriz;
   }
+
+  string[,] Funcion8(string cadena)
+  {
+    string[,] matriz = new string[3, 3];
+
+    for (int i = 0; i < matriz.GetLength(0); i++)
+    {
+      for (int j = 0; j < matriz.GetLength(1); j++)
+      {
+        matriz[i, j] = cadena;
+      }
+      Console.WriteLine();
+    }
+    return matriz;
+  }
+
+  bool Funcion9(int fila, int columna, int[,] matriz)
+  {
+    return fila >= 0 && columna < matriz.GetLength(0)
+    && columna >= 0 && fila < matriz.GetLength(1);
+  }
+
+  void Funcion10()
+  {
+    Console.WriteLine(@"Ingrese el numero de acuerdo a lo que necesite 
+1) Decimal a binario
+2) Binario a decimal");
+    int seleccion = Convert.ToInt32(Console.ReadLine());
+    if (seleccion == 1)
+    {
+      Console.WriteLine("Por favor ingrese un numero");
+      int numeroDecimal = Convert.ToInt32(Console.ReadLine());
+      double binarioSolucion = Funcion10DB(numeroDecimal);
+      Console.WriteLine($"El numero {numeroDecimal} en binario es {binarioSolucion}");
+    }
+    else if (seleccion == 2)
+    {
+      Console.WriteLine("Por favor ingrese un binario");
+      int numeroBinario = Convert.ToInt32(Console.ReadLine());
+      double decimalSolucion = Funcion10BD(numeroBinario);
+      Console.WriteLine($"El binario {numeroBinario} en decimal es {decimalSolucion}");
+    }
+    else
+    {
+      Console.WriteLine("Opcion invalidad");
+      Funcion10();
+    }
+  }
+
+  double Funcion10DB(int numeroDecimal)
+  {
+    double binario=0;
+    for (int i = numeroDecimal, j = 0; i > 0; i /= 2, j++)
+    {
+      numeroDecimal = i % 2;
+      binario += numeroDecimal * Math.Pow(10, j);
+    }
+    return binario; 
+  }
+
+  double Funcion10BD(int numeroBinario)
+  {
+    double decimalN = 0;
+    for (int i = numeroBinario, j = 0; i > 0; i /= 10, j++)
+    {
+      numeroBinario = i % 10;
+      if (numeroBinario != 0 && numeroBinario != 1)
+      {
+        return -1;
+      }
+      decimalN += numeroBinario * Math.Pow(2, j);
+    }
+    return decimalN;
+  }
+
 
   static void Main(string[] args)
   {
@@ -120,11 +197,52 @@
           break;
         case "7":
           Console.WriteLine("7. Rellenar una matriz pasada por parámetro con un valor dado.");
-          // Console.WriteLine("Ingrese un valor...");
-          // int valor = Convert.ToInt32(Console.ReadLine());
-          // int[,] matriz = resolucion.Funcion7(valor);
-          // Console.WriteLine($"La matriz es :\n{matriz}");
-          Console.WriteLine("PENDIENTE");
+          Console.WriteLine("Ingrese el tamaño de la matriz...");
+          int size = Convert.ToInt32(Console.ReadLine());
+          Console.WriteLine("Ingrese el numero que llenara la matriz...");
+          int valor = Convert.ToInt32(Console.ReadLine());
+
+          int[,] matriz = resolucion.Funcion7(valor, size);
+
+          Console.WriteLine("La matriz es: ");
+          for (int i = 0; i < matriz.GetLength(0); i++)
+          {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+              Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
+          }
+          break;
+        case "8":
+          Console.WriteLine("8. Mostrar una matriz pasada por parámetro.");
+          Console.WriteLine("Ingrese una palabra o caracter...");
+          string cadena = Console.ReadLine() ?? "";
+          string[,] matrizCadena = resolucion.Funcion8(cadena);
+
+          Console.WriteLine("La matriz es: ");
+          for (int i = 0; i < matrizCadena.GetLength(0); i++)
+          {
+            for (int j = 0; j < matrizCadena.GetLength(1); j++)
+            {
+              Console.Write(matrizCadena[i, j] + "\t");
+            }
+            Console.WriteLine();
+          }
+          break;
+        case "9":
+          Console.WriteLine("9. Indicar si una posición (fila y columna) esta dentro de una matriz.");
+          Console.WriteLine("Ingresa un numero de columna...");
+          int columna = Convert.ToInt32(Console.ReadLine());
+          Console.WriteLine("Ingresa un numero de fila...");
+          int fila = Convert.ToInt32(Console.ReadLine());
+
+          int[,] matrizPosicion = new int[4, 3];
+          Console.WriteLine($"La posicion columna ({columna}) con fila ({fila}) es: " + resolucion.Funcion9(fila, columna, matrizPosicion));
+          break;
+        case "10":
+          Console.WriteLine("10. Dado un numero decimal, pásalo a binario. Haz otra función que dado un binario, nos devuelva su numero decimal.");
+          resolucion.Funcion10();
           break;
         default:
           Console.WriteLine("OPCION INVALIDA");
