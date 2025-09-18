@@ -264,6 +264,61 @@ class Funciones
     return decimalN;
   }
 
+  int Funcion14()
+  {
+    int[] array = { 7, 4, 3, 10, 9, 3, 2, 1, 2 };
+    int mayor = array.Max();
+    return mayor;
+  } 
+
+  int Funcion15()
+  {
+    int[] array = { 7, 4, 3, 10, 9, 3, 2, 1, -2 };
+    int menor = array.Min();
+    return menor;
+  } 
+
+  int Funcion16(int[] array)
+  {
+    int posicion = array[0];
+    int indice = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+      if (array[i] > posicion)
+      {
+        posicion = array[i];
+        indice = i;
+      }
+    }
+    return indice;
+  } 
+
+  int Funcion17(int[] array)
+  {
+    int posicion = array[0];
+    int indice = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+      if (array[i] < posicion)
+      {
+        posicion = array[i];
+        indice = i;
+      }
+    }
+    return indice;
+  }
+
+  int Funcion18(int numero)
+  {
+    int factorial = 1;
+    for (int i = 1; i <= numero; i++)
+    {
+      factorial *= i ;
+
+    }
+    return factorial;
+  }
+
 
   static void Main(string[] args)
   {
@@ -371,6 +426,39 @@ class Funciones
         case "12":
           Console.WriteLine("12. Dado un numero decimal, pásalo a hexadecimal y viceversa.");
           resolucion.Funcion12();
+          break;
+        case "13":
+          Console.WriteLine("13. Realiza una función que dado un numero y dos bases. Que convierta un numero a otra base.");
+          Console.WriteLine("SIN SOLUCION POR EL MOMENTO");
+          break;
+        case "14":
+          Console.WriteLine("14. Crea una función que devuelva el número mayor de un array.");
+          Console.WriteLine($"El numero mayor del array es {resolucion.Funcion14()}");
+          break;
+        case "15":
+          Console.WriteLine("15. Crea una función que devuelva el número menor de un array.");
+          Console.WriteLine($"El numero menor del array es {resolucion.Funcion15()}");
+          break;
+        case "16":
+          Console.WriteLine("16. Crea una función que devuelva la posición del número mayor de un array.");
+          int[] arrayPosicionMayor = { 7, 4, 3, -10, 9, 3, 2, 1, 2 };
+          int mayorA = arrayPosicionMayor.Max();
+          int arrayPMayor = resolucion.Funcion16(arrayPosicionMayor);
+          Console.WriteLine($"El array es ({string.Join(", ", arrayPosicionMayor)}) y el numero mayor del array es {mayorA} ocupa la posicion {arrayPMayor}");
+          break;
+        case "17":
+          Console.WriteLine("17. Crea una función que devuelva la posición del número menor de un array.");
+          int[] arrayPosicionMenor = { 7, 4, 3, 10, 9, 3, 2, 1, 1 };
+          int menorA = arrayPosicionMenor.Min();
+          int arrayPMenor = resolucion.Funcion17(arrayPosicionMenor);
+          Console.WriteLine($"El array es ({string.Join(", ", arrayPosicionMenor)}) y el numero menor del array es {menorA} ocupa la posicion {arrayPMenor}");
+          break;
+        case "18":
+          Console.WriteLine("18. Crea una función que devuelva el factorial de un número.");
+          Console.WriteLine("Ingresa un numero...");
+          int numeroAFactorial = Convert.ToInt32(Console.ReadLine());
+          int factorial = resolucion.Funcion18(numeroAFactorial);
+          Console.WriteLine($"El factorial de {numeroAFactorial} es: {factorial}");
           break;
         default:
           Console.WriteLine("OPCION INVALIDA");
