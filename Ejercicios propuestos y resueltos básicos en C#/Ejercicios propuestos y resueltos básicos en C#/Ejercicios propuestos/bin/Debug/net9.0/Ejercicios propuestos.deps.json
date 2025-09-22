@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v9.0": {
       "Ejercicios propuestos/1.0.0": {
+        "dependencies": {
+          "Helpers": "1.0.0"
+        },
         "runtime": {
           "Ejercicios propuestos.dll": {}
+        }
+      },
+      "Helpers/1.0.0": {
+        "runtime": {
+          "Helpers.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "Ejercicios propuestos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Helpers/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
