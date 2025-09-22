@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+﻿using Helpers;
 
 class Funciones
 {
@@ -17,8 +17,7 @@ class Funciones
   void Funcion3()
   {
     int resultado = 1;
-    Console.WriteLine("Ingrese un numero...");
-    int numero = Convert.ToInt32(Console.ReadLine());
+    int numero = EntradaHelper.PedirEntero("Ingrese un numero...");
     for (int i = 1; i <= numero; i++)
     {
       resultado *= i;
@@ -93,29 +92,26 @@ class Funciones
 
   void Funcion10()
   {
-    Console.WriteLine(@"Ingrese el numero de acuerdo a lo que necesite 
+    int seleccion = EntradaHelper.PedirEntero(@"Ingrese el numero de acuerdo a lo que necesite 
 1) Decimal a binario
-2) Binario a decimal");
-    int seleccion = Convert.ToInt32(Console.ReadLine());
+2) Binario a decimal", 1,2);
     if (seleccion == 1)
     {
-      Console.WriteLine("Por favor ingrese un numero");
-      int numeroDecimal = Convert.ToInt32(Console.ReadLine());
+      int numeroDecimal = EntradaHelper.PedirEntero("Por favor ingrese un numero");
       double binarioSolucion = Funcion10DB(numeroDecimal);
       Console.WriteLine($"El numero {numeroDecimal} en binario es {binarioSolucion}");
     }
     else if (seleccion == 2)
     {
-      Console.WriteLine("Por favor ingrese un binario");
-      int numeroBinario = Convert.ToInt32(Console.ReadLine());
+      int numeroBinario = EntradaHelper.PedirEntero("Por favor ingrese un binario");
       double decimalSolucion = Funcion10BD(numeroBinario);
       Console.WriteLine($"El binario {numeroBinario} en decimal es {decimalSolucion}");
     }
-    else
-    {
-      Console.WriteLine("Opcion invalidad");
-      Funcion10();
-    }
+    // else
+    // {
+    //   Console.WriteLine("Opcion invalidad");
+    //   Funcion10();
+    // }
   }
 
   double Funcion10DB(int numeroDecimal)
@@ -146,29 +142,26 @@ class Funciones
 
   void Funcion11()
   {
-    Console.WriteLine(@"Ingrese el numero de acuerdo a lo que necesite 
+    int seleccion = EntradaHelper.PedirEntero(@"Ingrese el numero de acuerdo a lo que necesite 
 1) Decimal a octal
-2) Octal a decimal");
-    int seleccion = Convert.ToInt32(Console.ReadLine());
+2) Octal a decimal",1,2);
     if (seleccion == 1)
     {
-      Console.WriteLine("Por favor ingrese un numero");
-      int numeroDecimal = Convert.ToInt32(Console.ReadLine());
+      int numeroDecimal = EntradaHelper.PedirEntero("Por favor ingrese un numero");
       double octalSolucion = Funcion11DO(numeroDecimal);
       Console.WriteLine($"El numero {numeroDecimal} en octal es {octalSolucion}");
     }
     else if (seleccion == 2)
     {
-      Console.WriteLine("Por favor ingrese un octal");
-      int numeroOctal = Convert.ToInt32(Console.ReadLine());
+      int numeroOctal = EntradaHelper.PedirEntero("Por favor ingrese un octal");
       double decimalSolucion = Funcion11OD(numeroOctal);
       Console.WriteLine($"El octal {numeroOctal} en decimal es {decimalSolucion}");
     }
-    else
-    {
-      Console.WriteLine("Opcion invalidad");
-      Funcion11();
-    }
+    // else
+    // {
+    //   Console.WriteLine("Opcion invalidad");
+    //   Funcion11();
+    // }
   }
 
   double Funcion11DO(int numeroDecimal)
@@ -199,29 +192,26 @@ class Funciones
 
   void Funcion12()
   {
-    Console.WriteLine(@"Ingrese el numero de acuerdo a lo que necesite 
+    int seleccion = EntradaHelper.PedirEntero(@"Ingrese el numero de acuerdo a lo que necesite 
 1) Decimal a Hexa
-2) Hexa a decimal");
-    int seleccion = Convert.ToInt32(Console.ReadLine());
+2) Hexa a decimal",1,2);
     if (seleccion == 1)
     {
-      Console.WriteLine("Por favor ingrese un numero");
-      int numeroDecimal = Convert.ToInt32(Console.ReadLine());
+      int numeroDecimal = EntradaHelper.PedirEntero("Por favor ingrese un numero");
       string HexaSolucion = Funcion12DH(numeroDecimal);
       Console.WriteLine($"El numero {numeroDecimal} en hexadecimal es {HexaSolucion}");
     }
     else if (seleccion == 2)
     {
-      Console.WriteLine("Por favor ingrese un hexadecimal");
-      string numeroHexa = Console.ReadLine() ?? "";
+      string numeroHexa = EntradaHelper.PedirTexto("Por favor ingrese un hexadecimal");
       int decimalSolucion = Funcion12HD(numeroHexa);
       Console.WriteLine($"El hexadecimal {numeroHexa} en decimal es {decimalSolucion}");
     }
-    else
-    {
-      Console.WriteLine("Opcion invalidad");
-      Funcion12();
-    }
+    // else
+    // {
+    //   Console.WriteLine("Opcion invalidad");
+    //   Funcion12();
+    // }
   }
 
   string Funcion12DH(int numeroDecimal)
@@ -328,26 +318,22 @@ class Funciones
     do
     {
       Console.WriteLine("====================");
-      Console.WriteLine("Seleccione un ejercicio...");
       for (int i = 1; i <= 18; i++)
       {
         Console.Write($"{i}) ");
       }
-      opcion = Console.ReadLine() ?? "";
+      opcion = EntradaHelper.PedirTexto("\nSeleccione un ejercicio...");
       switch (opcion)
       {
         case "1":
           Console.WriteLine("1. Crea un método que nos salude, pasándole un nombre por parámetro.");
-          Console.WriteLine("Ingrese su nombre...");
-          string nombre = Console.ReadLine() ?? "";
+          string nombre = EntradaHelper.PedirTexto("Ingrese su nombre...");
           resolucion.Funcion1(nombre);
           break;
         case "2":
           Console.WriteLine("2. Crea una función que sume dos números pasados por parámetros, devolverá el resultado.");
-          Console.WriteLine("Ingrese el primer numero...");
-          int numero1 = Convert.ToInt32(Console.ReadLine());
-          Console.WriteLine("Ingrese el segundo numero...");
-          int numero2 = Convert.ToInt32(Console.ReadLine());
+          int numero1 = EntradaHelper.PedirEntero("Ingrese el primer numero...");
+          int numero2 = EntradaHelper.PedirEntero("Ingrese el segundo numero...");
           int resultado = resolucion.Funcion2(numero1, numero2);
           Console.WriteLine($"El resultado de la suma de {numero1} + {numero2} es = {resultado}");
           break;
@@ -372,10 +358,8 @@ class Funciones
           break;
         case "7":
           Console.WriteLine("7. Rellenar una matriz pasada por parámetro con un valor dado.");
-          Console.WriteLine("Ingrese el tamaño de la matriz...");
-          int size = Convert.ToInt32(Console.ReadLine());
-          Console.WriteLine("Ingrese el numero que llenara la matriz...");
-          int valor = Convert.ToInt32(Console.ReadLine());
+          int size = EntradaHelper.PedirEntero("Ingrese el tamaño de la matriz...");
+          int valor = EntradaHelper.PedirEntero("Ingrese el numero que llenara la matriz...");
 
           int[,] matriz = resolucion.Funcion7(valor, size);
 
@@ -391,8 +375,7 @@ class Funciones
           break;
         case "8":
           Console.WriteLine("8. Mostrar una matriz pasada por parámetro.");
-          Console.WriteLine("Ingrese una palabra o caracter...");
-          string cadena = Console.ReadLine() ?? "";
+          string cadena = EntradaHelper.PedirTexto("Ingrese una palabra o caracter...");
           string[,] matrizCadena = resolucion.Funcion8(cadena);
 
           Console.WriteLine("La matriz es: ");
@@ -407,10 +390,8 @@ class Funciones
           break;
         case "9":
           Console.WriteLine("9. Indicar si una posición (fila y columna) esta dentro de una matriz.");
-          Console.WriteLine("Ingresa un numero de columna...");
-          int columna = Convert.ToInt32(Console.ReadLine());
-          Console.WriteLine("Ingresa un numero de fila...");
-          int fila = Convert.ToInt32(Console.ReadLine());
+          int columna = EntradaHelper.PedirEntero("Ingresa un numero de columna...");
+          int fila = EntradaHelper.PedirEntero("Ingresa un numero de fila...");
 
           int[,] matrizPosicion = new int[4, 3];
           Console.WriteLine($"La posicion columna ({columna}) con fila ({fila}) es: " + resolucion.Funcion9(fila, columna, matrizPosicion));
@@ -455,8 +436,7 @@ class Funciones
           break;
         case "18":
           Console.WriteLine("18. Crea una función que devuelva el factorial de un número.");
-          Console.WriteLine("Ingresa un numero...");
-          int numeroAFactorial = Convert.ToInt32(Console.ReadLine());
+          int numeroAFactorial = EntradaHelper.PedirEntero("Ingresa un numero...");
           int factorial = resolucion.Funcion18(numeroAFactorial);
           Console.WriteLine($"El factorial de {numeroAFactorial} es: {factorial}");
           break;

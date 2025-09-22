@@ -1,4 +1,6 @@
-﻿class Arrays
+﻿using Helpers;
+
+class Arrays
 {
   void Array1()
   {
@@ -11,8 +13,7 @@
     int[] arrayPosiciones = new int[10];
     for (int i = 0; i < arrayPosiciones.Length; i++)
     {
-      Console.WriteLine($"Ingresa 10 valores, ahora estas en el valor {i}...");
-      int valores = Convert.ToInt32(Console.ReadLine());
+      int valores = EntradaHelper.PedirEntero($"Ingresa 10 valores, ahora estas en el valor {i}...");
       arrayPosiciones[i] = valores;
 
     }
@@ -50,8 +51,7 @@
   {
     int[] valores = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     int[] resultados = new int[valores.Length];
-    Console.WriteLine("Ingrese un número...");
-    int valor = Convert.ToInt32(Console.ReadLine());
+    int valor = EntradaHelper.PedirEntero("Ingrese un número...");
 
     for (int i = 0; i < valores.Length; i++)
     {
@@ -90,12 +90,11 @@
     do
     {
       Console.WriteLine("=========================");
-      Console.WriteLine("Elige un numero para ver el ejercicio...");
       for (int ea = 1; ea <= 7; ea++)
       {
         Console.Write($"{ea}) ");
       }
-      opcion = Console.ReadLine() ?? "";
+      opcion = EntradaHelper.PedirTexto("\nElige un numero para ver el ejercicio...");
 
       switch (opcion)
       {

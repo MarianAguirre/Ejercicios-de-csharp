@@ -1,4 +1,5 @@
-﻿class CajeroAutomatico
+﻿using Helpers;
+class CajeroAutomatico
 {
   double saldo = 10000;
 
@@ -14,8 +15,7 @@
       3.Retirar
       4.Salir"
       );
-      Console.WriteLine("Seleccione una opcion");
-      opcion = Console.ReadLine() ?? "";
+      opcion = EntradaHelper.PedirTexto("Seleccione una opcion");
 
       switch (opcion)
       {
@@ -46,30 +46,28 @@
     }
     void Depositar()
     {
-      Console.WriteLine("Ingrese el monto a depositar...");
-      double monto = Convert.ToDouble(Console.ReadLine());
-      if (monto <= 0)
-      {
-        Console.WriteLine("MONTO INVALIDO. NO DEBE SER 0, INTENTE DE NUEVO");
-        Depositar();
-      }
-      else
-      {
+      double monto = EntradaHelper.PedirDouble("Ingrese el monto a depositar...",0.01);
+      // if (monto <= 0)
+      // {
+      //   Console.WriteLine("MONTO INVALIDO. NO DEBE SER 0, INTENTE DE NUEVO");
+      //   Depositar();
+      // }
+      // else
+      // {
         saldo += monto;
         Console.WriteLine($"Deposito correctamente, nuevo saldo: ${saldo}");
         OtraOperacion();
-      }
+      // }
     }
 
     void Retirar()
     {
-      Console.WriteLine("Ingrese el monto a retirar...");
-      double retiro = Convert.ToDouble(Console.ReadLine());
-      if (retiro == 0)
-      {
-        Console.WriteLine("MONTO INVALIDO. NO PUEDE SER 0, INTENTE DE NUEVO");
-        Retirar();
-      }
+      double retiro = EntradaHelper.PedirDouble("Ingrese el monto a retirar...", 0.01);
+      // if (retiro == 0)
+      // {
+      //   Console.WriteLine("MONTO INVALIDO. NO PUEDE SER 0, INTENTE DE NUEVO");
+      //   Retirar();
+      // }
       if (retiro > saldo)
       {
         Console.WriteLine("FONDOS INSUFICIENTES. INTENTE DE NUEVO");
@@ -94,8 +92,7 @@
 
     void OtraOperacion()
     {
-      Console.WriteLine("\n DESEA REALIZAR OTRA OPERACION? (1=SI / 2=NO)");
-      int respuesta = Convert.ToInt32(Console.ReadLine());
+      int respuesta = EntradaHelper.PedirEntero("\n DESEA REALIZAR OTRA OPERACION? (1=SI / 2=NO)",1,2);
       if (respuesta == 1)
       {
         Menu();

@@ -1,0 +1,12 @@
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/bin/Debug/net9.0/Validaciones.deps.json
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/bin/Debug/net9.0/Validaciones.dll
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/bin/Debug/net9.0/Validaciones.pdb
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.GeneratedMSBuildEditorConfig.editorconfig
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.AssemblyInfoInputs.cache
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.AssemblyInfo.cs
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.csproj.CoreCompileInputs.cache
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.sourcelink.json
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.dll
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/refint/Validaciones.dll
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/Validaciones.pdb
+/home/swam/Documentos/Ejercicios-de-csharp/Validaciones/obj/Debug/net9.0/ref/Validaciones.dll
