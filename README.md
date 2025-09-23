@@ -2,6 +2,8 @@
 Ejercicios prácticos de C#
 
 ## Estructura 
+
+```bash
 EjerciciosDeCSharp/
 │── Ejercicios/                   
 │   ├── CajeroAutomatico/
@@ -18,6 +20,7 @@ EjerciciosDeCSharp/
 │   └── Validador.csproj
 │
 └── EjerciciosDeCSharp.sln               # Solution principal
+```
 
 
 ## Ejercicio - Cajero Automatico
