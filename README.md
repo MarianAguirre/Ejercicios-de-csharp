@@ -9,6 +9,7 @@ EjerciciosDeCSharp/
 │   ├── CajeroAutomatico/
 │   ├── EjerciciosDeArrays/
 │   ├── EjerciciosDeFunciones/
+│   ├── EjerciciosDePOO/
 │   ├── EjerciciosPropuestosBasicos/
 │
 │── Helpers/                     # Librería para interacción con el usuario
@@ -34,3 +35,6 @@ Ejercicio practico basico de la funcion de un cajero automatico, ejercicio cread
 
 ## Ejercicios de funciones y metodos
 18 Ejercicios de funciones y métodos  de [Ejercicios propuestos y resueltos funciones y métodos C#](https://discoduroderoer.es/ejercicios-propuestos-y-resueltos-funciones-y-metodos-c-sharp/)
+
+## Ejercicios de POO
+7 Ejercicios de practica de POO de [Ejercicios propuestos y resueltos POO C#](https://discoduroderoer.es/ejercicios-propuestos-y-resueltos-poo-c-sharp/)
