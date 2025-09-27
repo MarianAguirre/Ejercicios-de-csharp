@@ -1,5 +1,7 @@
 ﻿using EjerciciosDePOO;
 using Helpers;
+using Microsoft.VisualBasic;
+
 
 namespace POO
 {
@@ -7,6 +9,7 @@ namespace POO
   {
     static void Main(string[] args)
     {
+      var ran = new Random();
       Console.WriteLine("EJERCICIOS DE POO");
       POO solucion = new POO();
       string opcion = "";
@@ -24,6 +27,9 @@ namespace POO
         {
           case "1":
             solucion.Ejercicio1();
+            break;
+          case "2":
+            solucion.Ejercicio2(ran);
             break;
           default:
             Console.WriteLine("OPCION INVALIDA");
@@ -51,6 +57,66 @@ Crea el metodo toString.");
       Console.WriteLine("Cambio del precio");
       coche1.precio = 4;
       Console.WriteLine(coche1.ToString());
+    }
+
+    public void Ejercicio2(Random ran)
+    {
+      string opciones;
+      int limiteCoches = ran.Next(1, 1);
+      int numCoches = 0;
+      Concesionario concesionario = new Concesionario(limiteCoches);
+      int nuevoId = concesionario.ObtenerSiguienteId();
+    
+
+      do
+      {
+        Console.WriteLine("Crea una clase Concesionario que gestione una serie de coches. Tendra un array de objetos coches (anterior ejercicio) y un limite de coches.");
+        opciones = EntradaHelper.PedirTexto(@$"¿Que quieres hacer?
+1) Agregar coche
+2) Mostrar coches
+3) Vacias coches
+4) Eliminar coche
+Limite de coches: {limiteCoches}
+Coches actuales: {numCoches}
+");
+        switch (opciones)
+        {
+          case "1":
+            if (limiteCoches != numCoches)
+            {
+              Coche cocheNuevo = new Coche(nuevoId, "", "", "", 0.0);
+              cocheNuevo.marca = EntradaHelper.PedirTexto("Marca...");
+              cocheNuevo.modelo = EntradaHelper.PedirTexto("Modelo...");
+              cocheNuevo.km = EntradaHelper.PedirTexto("Km...");
+              cocheNuevo.precio = EntradaHelper.PedirDouble("Precio...");
+              concesionario.agregarCoche(cocheNuevo);
+              numCoches++;
+            }
+            else
+            {
+              Console.WriteLine("HAZ LLEGADO AL LIMITE PARA AGREGAR COCHES");
+            }
+            break;
+          case "2":
+            Console.WriteLine("COCHES ACTUALES");
+            concesionario.mostrarCoches();
+            break;
+          case "3":
+            concesionario.vaciarCoches();
+            Console.WriteLine("COCHES VACIOS");
+            numCoches = 0;
+            break;
+          case "4":
+            int cocheId = EntradaHelper.PedirEntero("Ingresa la id del coche a elimiar...");
+            concesionario.eliminarCochesPorId(cocheId);
+            Console.WriteLine("Coche eliminado");
+            numCoches--;
+            break;
+          default:
+            Console.WriteLine("Opcion invalida");
+            break;
+        }
+      } while (opciones != "5");
     }
   }
 }
