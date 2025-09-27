@@ -31,6 +31,9 @@ namespace POO
           case "2":
             solucion.Ejercicio2(ran);
             break;
+          case "3":
+            solucion.Ejercicio3();
+            break;
           default:
             Console.WriteLine("OPCION INVALIDA");
             break;
@@ -62,11 +65,11 @@ Crea el metodo toString.");
     public void Ejercicio2(Random ran)
     {
       string opciones;
-      int limiteCoches = ran.Next(1, 1);
+      int limiteCoches = ran.Next(1, 5);
       int numCoches = 0;
       Concesionario concesionario = new Concesionario(limiteCoches);
       int nuevoId = concesionario.ObtenerSiguienteId();
-    
+
 
       do
       {
@@ -118,5 +121,25 @@ Coches actuales: {numCoches}
         }
       } while (opciones != "5");
     }
+    public void Ejercicio3()
+    {
+      Aleatorios aleatorios = new Aleatorios();
+      Console.WriteLine(@"3. Crea una clase Aleatorios
+Como atributo tendra un Random.
+Tendra los siguientes metodos:
+– Generar un numero entre 2 numeros
+– Generar un array de numeros entre dos numeros");
+      int numero1 = EntradaHelper.PedirEntero("Ingresa el primer numero...");
+      int numero2 = EntradaHelper.PedirEntero("Ingresa el segundo numero...");
+      int numeroGenerado = aleatorios.numeroEntreDosNumeros(numero1, numero2);
+
+      Console.WriteLine($"El numero aleatorio {numero1} y {numero2} es: {numeroGenerado}");
+      int sizeArray = EntradaHelper.PedirEntero("Ingresa el tamaño del array...");
+      string arrayGenerado = aleatorios.arrayDeNumeros(numero1,numero2,sizeArray);
+      Console.WriteLine($"El array aleatorio {numero1} y {numero2} con tamaño en el array de {sizeArray} es: {arrayGenerado}");
+      
+      
+    }
   }
+  
 }
