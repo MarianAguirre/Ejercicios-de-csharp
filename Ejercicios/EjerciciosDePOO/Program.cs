@@ -15,7 +15,7 @@ namespace POO
       do
       {
         Console.WriteLine("================================================");
-        for (int i = 1; i < 7; i++)
+        for (int i = 1; i < 8; i++)
         {
           Console.Write($"{i}) ");
         }
@@ -38,6 +38,9 @@ namespace POO
             break;
           case "5":
             solucion.Ejercicio5(ran);
+            break;
+          case "6":
+            solucion.Ejercicio6();
             break;
           default:
             Console.WriteLine("OPCION INVALIDA");
@@ -162,7 +165,7 @@ Tendra los siguientes metodos:
     {
       int tamanioMaximo = ran.Next(100, 1000);
       Ordenador ordenador = new Ordenador(tamanioMaximo);
-      
+
       string opcion;
       Console.WriteLine(@"Crea una clase Ordenador con los siguientes atributos:
 – Tamaño disco (GB)
@@ -206,8 +209,43 @@ Ordenador: {estado}
             break;
         }
       } while (opcion != "5");
+    }
 
-
+    public void Ejercicio6()
+    {
+      Console.WriteLine(@"Crea la clase ConexionAccess para conectar access");
+      string opcion;
+      ConexionAccess conexion = new ConexionAccess();
+      do
+      {
+        string estado = conexion.EstadoBDActual();
+        opcion = EntradaHelper.PedirTexto($@"Ingresa el numero de lo que quieres hacer con la conexion...
+1) Abre la base de datos.
+2) Cierra la base de datos.
+3) Devuelve un dataset de la consulta.
+4) Devuelve si se ejecuto o no la instruccion.
+Esto de la base de datos: {estado}
+");
+        switch (opcion)
+        {
+          case "1":
+            conexion.Open();
+            break;
+          case "2":
+            conexion.Close();
+            break;
+          case "3":
+            Console.WriteLine("Aun no a sido implementado");
+            break;
+          case "4":
+            Console.WriteLine("Aun no a sido implementado");
+            break;
+          default:
+            Console.WriteLine("Opcion invalida");
+            break;
+        }
+      } while (opcion != "5");
     }
   }
 }
+
