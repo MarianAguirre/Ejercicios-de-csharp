@@ -36,6 +36,9 @@ namespace POO
           case "4":
             solucion.Ejercicio4();
             break;
+          case "5":
+            solucion.Ejercicio5(ran);
+            break;
           default:
             Console.WriteLine("OPCION INVALIDA");
             break;
@@ -153,6 +156,58 @@ Tendra los siguientes metodos:
       string arrayGenerado = aleatorios.arrayDeNumerosNoRepetidos(numero1, numero2, sizeArray);
       Console.WriteLine(arrayGenerado);
     }
-  }
 
+
+    public void Ejercicio5(Random ran)
+    {
+      int tamanioMaximo = ran.Next(100, 1000);
+      Ordenador ordenador = new Ordenador(tamanioMaximo);
+      
+      string opcion;
+      Console.WriteLine(@"Crea una clase Ordenador con los siguientes atributos:
+– Tamaño disco (GB)
+– Tamaño disco max (GB)
+– Encendido
+");
+
+      do
+      {
+        int tamanioDiscoActual = ordenador.tamanioDiscoActual();
+        string estado = ordenador.estado();
+        opcion = EntradaHelper.PedirTexto($@"Ingresa el numero de lo que hacer con el ordenador:
+1) Encender.
+2) Agregar datos: añade informacion al disco duro. Solo si esta encendido el ordenador.
+3) Eliminar datos: elimina informacion al disco duro. Solo si esta encendido el ordenador.
+4) Apagar.
+Tamaño de disco disponible: {tamanioMaximo} GB
+Tamaño de disco ocupado: {tamanioDiscoActual} GB
+Ordenador: {estado}
+");
+        switch (opcion)
+        {
+          case "1":
+            ordenador.encender();
+            Console.WriteLine("Ordenador encendido");
+            break;
+          case "2":
+            int datosAgregar = EntradaHelper.PedirEntero("Ingresa el numero de tamaño de datos en Gigas a agregar...", 1, tamanioMaximo);
+            ordenador.agregarDatos(datosAgregar);
+            break;
+          case "3":
+            int datosEliminar = EntradaHelper.PedirEntero("Ingresa el numero de tamaño de datos en Gigas a eliminar...", 1, tamanioMaximo);
+            ordenador.eliminarDatos(datosEliminar);
+            break;
+          case "4":
+            ordenador.apagar();
+            Console.WriteLine("Ordenador apagado");
+            break;
+          default:
+            Console.WriteLine("OPCION INVALIDA");
+            break;
+        }
+      } while (opcion != "5");
+
+
+    }
+  }
 }
