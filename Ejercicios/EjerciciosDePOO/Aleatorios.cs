@@ -26,4 +26,38 @@ public class Aleatorios
     }
     return string.Join(", ", arrayGenerado);
   }
+
+  public string arrayDeNumerosNoRepetidos(int numero1, int numero2, int sizeArray)
+  {
+    bool repetido;
+    int[] arrayGenerado = new int[sizeArray];
+    int numeroGenerado;
+    int indice = 0;
+    if ((numero1 | numero2) > sizeArray)
+    {
+      while (indice < arrayGenerado.Length)
+      {
+        repetido = false;
+        numeroGenerado = numeroEntreDosNumeros(numero1, numero2);
+        for (int i = 0; i < indice; i++)
+        {
+          if (arrayGenerado[i] == numeroGenerado)
+          {
+            repetido = true;
+          }
+        }
+          if (!repetido)
+          {
+            arrayGenerado[indice] = numeroGenerado;
+            indice++;
+          }
+      }
+
+    }
+    else
+    {
+      return ("No es posible genera un array asi, el tamaño del primer o segundo numero debe ser mas grande que el tamaño del array");
+    }
+    return ($"El array aleatorio entre {numero1} y {numero2} con tamaño en el array de {sizeArray} es {string.Join(", ", arrayGenerado)}");
+  }
 }

@@ -1,6 +1,5 @@
 ﻿using EjerciciosDePOO;
 using Helpers;
-using Microsoft.VisualBasic;
 
 
 namespace POO
@@ -33,6 +32,9 @@ namespace POO
             break;
           case "3":
             solucion.Ejercicio3();
+            break;
+          case "4":
+            solucion.Ejercicio4();
             break;
           default:
             Console.WriteLine("OPCION INVALIDA");
@@ -135,11 +137,22 @@ Tendra los siguientes metodos:
 
       Console.WriteLine($"El numero aleatorio {numero1} y {numero2} es: {numeroGenerado}");
       int sizeArray = EntradaHelper.PedirEntero("Ingresa el tamaño del array...");
-      string arrayGenerado = aleatorios.arrayDeNumeros(numero1,numero2,sizeArray);
+      string arrayGenerado = aleatorios.arrayDeNumeros(numero1, numero2, sizeArray);
       Console.WriteLine($"El array aleatorio {numero1} y {numero2} con tamaño en el array de {sizeArray} es: {arrayGenerado}");
-      
-      
+    }
+
+    public void Ejercicio4()
+    {
+      Aleatorios aleatorios = new Aleatorios();
+      Console.WriteLine(@"Usando la clase anterior de Aleatorios
+– Generar un array de números no repetidos entre dos números
+");
+      int numero1 = EntradaHelper.PedirEntero("Ingresa el primer numero...");
+      int numero2 = EntradaHelper.PedirEntero("Ingresa el segundo numero...");
+      int sizeArray = EntradaHelper.PedirEntero("Ingresa el tamaño del array...");
+      string arrayGenerado = aleatorios.arrayDeNumerosNoRepetidos(numero1, numero2, sizeArray);
+      Console.WriteLine(arrayGenerado);
     }
   }
-  
+
 }
