@@ -42,11 +42,14 @@ namespace POO
           case "6":
             solucion.Ejercicio6();
             break;
+          case "7":
+            solucion.Ejercicio7();
+            break;
           default:
             Console.WriteLine("OPCION INVALIDA");
             break;
         }
-      } while (opcion != "7");
+      } while (opcion != "8");
 
     }
 
@@ -245,6 +248,28 @@ Esto de la base de datos: {estado}
             break;
         }
       } while (opcion != "5");
+    }
+
+    public void Ejercicio7()
+    {
+      Console.WriteLine(@"Crea una clase Vehiculo que sea la misma que la clase Coche que trabajamos en el 1º video.
+Crea dos clases hijas: Coche y Moto
+
+La clase Coche tendra un atributo airbag, sobrescribe el metodo precio, si tiene airbag el precio aumentara 200.
+
+La clase Moto tendra un atributo sidecar, sobrescribe el metodo precio, si tiene sidecar el precio aumentara 50.");
+Console.WriteLine("==========================================");
+      Moto moto = new Moto(1, "Italika", "3", "150km", 7500, true);
+      Console.WriteLine("Clase Moto con las propiedades:");
+      Console.WriteLine(moto.ToString());
+      Moto moto2 = new Moto(1, "Italika", "3", "150km", 7500, false);
+      Console.WriteLine(moto2.ToString());
+Console.WriteLine("==========================================");
+      Carro carro = new Carro(1, "Camaro", "3", "150km", 90000, true);
+      Console.WriteLine("Clase Carro con las propiedades:");
+      Console.WriteLine(carro.ToString());
+      Carro carro2 = new Carro(1, "Camaro", "3", "150km", 90000, false);
+      Console.WriteLine(carro2.ToString());
     }
   }
 }
